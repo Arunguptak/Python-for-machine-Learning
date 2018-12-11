@@ -1,0 +1,80 @@
+AI: Artiﬁcial Intelligence 
+AMP: Approximate Message Passing 
+BN: Bayesian Network 
+DAG: Directed Acyclic Graph 
+ELBO: Evidence Lower BOund 
+EM: Expectation Maximization 
+ERM: Empirical Risk Minimization
+GAN: Generative Adversarial Network 
+GLM: Generalized Linear Model 
+HMM: Hidden Markov Model
+i.i.d.: independent identically distributed
+KL: Kullback-Leibler 
+LASSO: Least Absolute Shrinkage and Selection Operator
+LBP: Loopy Belief Propagation 
+LL: Log-Likelihood 
+LLR: Log-Likelihood Ratio 
+LS: Least Squares
+MC: Monte Carlo 
+MCMC: Markov Chain Monte Carlo 
+MDL: Minimum Description Length
+MFVI: Mean Field Variational Inference
+ML: Maximum Likelihood 
+MRF: Markov Random Field 
+NLL: Negative Log-Likelihood 
+PAC: Probably Approximately Correct 
+pdf: probability density function
+pmf: probability mass function 
+PCA: Principal Component Analysis
+PPCA: Probabilistic Principal Component Analysis
+QDA: Quadratic Discriminant Analysis 
+RBM: Restricted Boltzmann Machine 
+SGD: Stochastic Gradient Descent 
+SVM: Support Vector Machine 
+rv: random variable or random vector (depending on the context) 
+s.t.: subject to
+VAE: Variational AutoEncoder
+VC: Vapnik–Chervonenkis
+VI: Variational Inference
+
+ The machine learning alternative is to collect large data sets, e.g., of labelled speech, images or videos, 
+ and to use this information to train general-purpose learning machines to carry out the desired task. 
+ 
+ When to Use Machine Learning?
+ 
+ 1. the task involves a function that maps well-deﬁned inputs to welldeﬁned outputs;
+ 2. large data sets exist or can be created containing input-output pairs; 
+ 3. the task provides clear feedback with clearly deﬁnable goals and metrics; 
+ 4. the task does not involve long chains of logic or reasoning that depend on diverse background knowledge or common sense;
+ 5. the task does not require detailed explanations for how the decision was made;
+ 6. the task has a tolerance for error and no need for provably correct or optimal solutions;
+ 7. the phenomenon or function being learned should not change rapidly over time; and
+ 8. no specialized dexterity, physical skills, or mobility is required. 
+ 
+ Supervised learning:We have N labelled training examples D={(xn,tn)}N n=1, where xn represents a covariate, 
+ or explanatory variable, while tn is the corresponding label, or response. For instance, 
+ variable xn may represent the text of an email, while the label tn may be a binary 
+ variable indicating whether the email is spam or not. The goal of supervised learning is 
+ to predict the value of the label t for an input x that is not in the training set
+
+
+Unsupervised learning:-Suppose now that we have an unlabelled set of training examples D={xn}N n=1.
+Less well deﬁned than supervised learning, unsupervised learning generally refers to the task of 
+learning properties of the mechanism that generates this data set
+
+Reinforcement learning: Reinforcement learning refers to the problem of inferring optimal sequential decisions 
+based on rewards or punishments received as a result of previous actions. Under supervised learning, the “label” t 
+refers to an action to be taken when the learner is in an informational state about the environment given by a variable x.
+Upon taking an action t in a state x, the learner is provided with feedback on the immediate reward accrued via this decision,
+and the environment moves on to a diﬀerent state. As an example, an agent can be trained to navigate a given environment in 
+the presence of obstacles by penalizing decisions that result in collisions. 
+
+
+
+
+
+
+
+
+
+
