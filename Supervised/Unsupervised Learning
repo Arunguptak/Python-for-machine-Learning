@@ -1,0 +1,98 @@
+Supervised learning:-
+In supervised learning, the training data you feed to the algorithm includes the desired solutions, called labels 
+
+ most important supervised learning algorithms:-
+   • k-Nearest Neighbors
+   • Linear Regression 
+   • Logistic Regression 
+   • Support Vector Machines (SVMs)
+   • Decision Trees and Random Forests 
+   • Neural networks2
+   
+   Unsupervised learning:-
+   In unsupervised learning, as you might guess, the training data is unlabeled 
+most important unsupervised learning algorithms:-
+• Clustering
+—k-Means
+—Hierarchical Cluster Analysis (HCA)
+—Expectation Maximization 
+• Visualization and dimensionality reduction 
+—Principal Component Analysis (PCA) 
+—Kernel PCA
+—Locally-Linear Embedding (LLE)
+—t-distributed Stochastic Neighbor Embedding (t-SNE) 
+• Association rule learning 
+—Apriori 
+—Eclat
+
+Semisupervised learning:-
+Some algorithms can deal with partially labeled training data, usually a lot of unlabeled data and a little bit of labeled data.
+This is called semisupervised learning
+
+Some photo-hosting services, such as Google Photos, are good examples of this. Once you upload all your
+family photos to the service, it automatically recognizes that the same person A shows up in photos 1, 5, and 11, while another 
+person B shows up in photos 2, 5, and 7. This is the unsupervised part of the algorithm (clustering). Now all the system needs is for
+you to tell it who these people are. Just one label per person,4 and it is able to name everyone in every photo, which is useful for
+searching photos Most semisupervised learning algorithms are combinations of unsupervised and supervised algorithms. 
+For example, deep belief networks (DBNs) are based on unsupervised components called restricted Boltzmann machines (RBMs)
+stacked on top of one another. RBMs are trained sequentially in an unsupervised manner, and then the whole system is fine-tuned
+using supervised learning techniques.
+
+Reinforcement Learning:-
+Reinforcement Learning is a very different beast. The learning system, called an agent in this context, 
+can observe the environment, select and perform actions, 
+and get rewards in return (or penalties in the form of negative rewards, 
+For example, many robots implement Reinforcement Learning algorithms to learn how to walk. DeepMind’s AlphaGo 
+program is also a good example of Reinforcement Learning: it made the headlines in March 2016 when it beat the world champion 
+Lee Sedol at the game of Go. It learned its winning policy by analyzing millions of games, and then playing many games against 
+itself. Note that learning was turned off during the games against the champion; AlphaGo was just applying the policy it had 
+learned. 
+
+Training and running a linear model using Scikit-Lear:-
+
+import matplotlib import matplotlib.pyplot as plt 
+import numpy as np 
+import pandas as pd import sklearn
+# Load the data oecd_bli = pd.read_csv("oecd_bli_2015.csv", thousands=',')
+gdp_per_capita = pd.read_csv("gdp_per_capita.csv",thousands=',',delimiter='\t',encoding='latin1', na_values="n/a")
+# Prepare the data 
+country_stats = prepare_country_stats(oecd_bli, gdp_per_capita) X = np.c_[country_stats["GDP per capita"]] y = np.c_[country_stats["Life satisfaction"]]
+# Visualize the data 
+country_stats.plot(kind='scatter', x="GDP per capita", y='Life satisfaction') plt.show()
+# Select a linear model
+lin_reg_model = sklearn.linear_model.LinearRegression()
+# Train the model
+lin_reg_model.fit(X, y)
+# Make a prediction for Cyprus
+X_new = [[22587]]  # Cyprus' GDP per capita print(lin_reg_model.predict(X_new))
+# outputs [[ 5.96242338]]
+ k-Nearest Neighbors regression:-
+ clf = sklearn.neighbors.KNeighborsRegressor(n_neighbors=3)
+
+Main Challenges of Machine Learning:-
+In short, since your main task is to select a learning algorithm and train it on some data,
+the two things that can go wrong are “bad algorithm” and “bad data.” Let’s start with examples of bad data. 
+Overfitting the Training Data:-
+Say you are visiting a foreign country and the taxi driver rips you off.
+You might be tempted to say that all taxi drivers in that country are thieves.
+Overgeneralizing is something that we humans do all too often, and unfortunately machines 
+can fall into the same trap if we are not careful. In Machine Learning this is called overfitting
+it means that the model performs well on the training data, but it does not generalize well. 
+• To simplify the model by selecting one with fewer parameters (e.g., a linear model rather than a high-degree polynomial model), 
+by reducing the number of attributes in the training data or by constraining the model
+• To gather more training data 
+• To reduce the noise in the training data (e.g., fix data errors and remove outliers
+
+Constraining a model to make it simpler and reduce the risk of overfitting is called regularization
+Underfitting the Training Data:-
+The main options to fix this problem are: 
+• Selecting a more powerful model, with more parameters
+• Feeding better features to the learning algorithm (feature engineering) 
+• Reducing the constraints on the model (e.g., reducing the regularization hyperparameter)
+
+It is common to use 80% of the data for training and hold out 20% for testing
+Pipelines:-
+A sequence of data processing components is called a data pipeline.
+Pipelines are very common in Machine Learning systems, since there is a lot of data to manipulate and many data transformations to apply. 
+
+
